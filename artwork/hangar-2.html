@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Hangar 2</title>
+
+
+<link rel="stylesheet" href="../css/style.css">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>Bearing Point Studio</h1>
+
+<nav>
+
+<a href="../index.html">Home</a>
+<a href="../archive.html">Archive</a>
+<a href="../exhibitions.html">Exhibitions & Awards</a>
+<a href="../contact.html">Contact</a>
+
+</nav>
+
+</header>
+
+
+
+<main>
+
+<section class="artwork-page">
+
+
+<div class="art-image">
+
+
+<div class="viewer-wrapper">
+
+
+    <div id="zoom-viewer"></div>
+
+
+
+
+</div>
+
+
+<p class="zoom-note">
+Click and drag to explore details
+</p>
+
+
+</div>
+
+
+
+
+<div class="art-info">
+
+
+<h2>Hangar 2</h2>
+
+
+<table>
+
+<tr>
+
+<th>Date</th>
+
+<td>2026</td>
+
+</tr>
+
+
+<tr>
+
+<th>Medium</th>
+
+<td>Ink &amp; Watercolour on Paper</td>
+
+</tr>
+
+
+<tr>
+
+<th>Dimensions</th>
+
+<td>2340mm x 530mm</td>
+
+</tr>
+
+
+<tr>
+
+<th>Series</th>
+
+<td>Traces of Place</td>
+
+</tr>
+
+
+</table>
+
+
+
+<p>
+
+A panoramic drawing of a museum hangar.
+</p>
+<p>
+The composition presents a cross-section of visitors, aircraft, artefacts and mannequins distributed throughout the gallery spaces.
+</p>
+<p>
+Observing everything from the quiet diligence of volunteer restoration to the unsettling display of wartime memorabilia, the drawing unfolds the uneasy coexistence of preservation, nostalgia and the enduring presence of conflict.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+</main>
+
+
+<footer>
+
+© 2026 Bearing Point Studio
+
+</footer>
+
+<script>
+
+let viewer = OpenSeadragon({
+
+    id: "zoom-viewer",
+
+    prefixUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/images/",
+
+    tileSources: {
+        type: "image",
+        url: "../images/hangar_2_lo_res.jpg"
+    },
+
+    // Remove the standard sprite controls
+    showNavigator: false,
+    showZoomControl: false,
+    showHomeControl: false,
+    showFullPageControl: false,
+
+    // Smooth movement
+    animationTime: 1.2,
+    blendTime: 0.2,
+
+    gestureSettingsMouse: {
+        scrollToZoom: true,
+        clickToZoom: false,
+        dblClickToZoom: true
+    },
+
+    zoomPerScroll: 1.2
+
+});
+
+
+// ----------------------------------
+// CUSTOM MUSEUM-STYLE CONTROLS
+// ----------------------------------
+
+const controls = document.createElement("div");
+
+controls.className = "archive-controls";
+
+
+// Zoom in
+
+const zoomIn = document.createElement("button");
+
+zoomIn.textContent = "+";
+
+zoomIn.setAttribute("aria-label", "Zoom in");
+
+zoomIn.onclick = function() {
+
+    viewer.viewport.zoomBy(1.2);
+
+};
+
+
+// Zoom out
+
+const zoomOut = document.createElement("button");
+
+zoomOut.textContent = "−";
+
+zoomOut.setAttribute("aria-label", "Zoom out");
+
+zoomOut.onclick = function() {
+
+    viewer.viewport.zoomBy(0.8);
+
+};
+
+
+// Reset view
+
+const reset = document.createElement("button");
+
+reset.textContent = "RESET";
+
+reset.onclick = function() {
+
+    viewer.viewport.goHome();
+
+};
+
+
+// Full screen
+
+const fullscreen = document.createElement("button");
+
+fullscreen.textContent = "FULL SCREEN";
+
+fullscreen.onclick = function() {
+
+    viewer.setFullPage(true);
+
+};
+
+
+// Add buttons to control group
+
+controls.appendChild(zoomIn);
+controls.appendChild(zoomOut);
+controls.appendChild(reset);
+controls.appendChild(fullscreen);
+
+
+// Anchor the controls inside the OpenSeadragon viewer
+
+viewer.addControl(
+
+    controls,
+
+    {
+        anchor: OpenSeadragon.ControlAnchor.TOP_LEFT
+    }
+
+);
+
+</script>
+
+
+</body>
+
+</html>

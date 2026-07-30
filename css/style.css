@@ -1,0 +1,566 @@
+/* =================================
+   GLOBAL
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 400;
+    color: #222;
+    background: #fff;
+}
+
+
+/* =================================
+   TYPOGRAPHY
+================================= */
+
+h1 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: .02em;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: .9rem;
+    font-weight: 400;
+    color: #777;
+}
+
+p {
+    font-weight: 400;
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 80px;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: #111;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    position: relative;
+    font-size: .9rem;
+    color: #222;
+    text-decoration: none;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #111;
+    transition: width .3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =================================
+   MAIN
+================================= */
+
+main {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 80px;
+}
+
+
+/* =================================
+   INTRO
+================================= */
+
+/* =================================
+   HOMEPAGE HERO
+================================= */
+
+.hero {
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* =================================
+   HOMEPAGE INTRO
+================================= */
+
+.intro {
+    max-width: 800px;
+    margin: 0 auto 80px 0;
+}
+
+.intro-text h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.intro-text p {
+    max-width: 700px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+    padding: 60px;
+    text-align: center;
+    color: #777;
+    font-size: .85rem;
+    border-top: 1px solid #ddd;
+    margin-top: 120px;
+}
+
+
+/* =================================
+   PAGE TITLE
+================================= */
+
+.page-title {
+    margin-bottom: 80px;
+}
+
+.page-title h2 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.page-title p {
+    max-width: 650px;
+    color: #666;
+}
+
+
+/* =================================
+   GALLERY
+================================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 70px 45px;
+}
+
+.artwork img {
+    width: 100%;
+    display: block;
+    transition: opacity .25s ease;
+}
+
+.artwork img:hover {
+    opacity: .88;
+}
+
+
+/* =================================
+   ARTWORK CAPTION
+================================= */
+
+.caption {
+    margin-top: 18px;
+}
+
+.caption h3 {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.caption p {
+    font-size: .9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/* =================================
+   ARTWORK PAGE
+================================= */
+
+.artwork-page {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.art-info {
+    position: sticky;
+    top: 50px;
+}
+
+.art-info h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 35px;
+}
+
+.art-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    font-size: .9rem;
+}
+
+.art-info th {
+    text-align: left;
+    font-weight: 400;
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #777;
+    padding: 10px 20px 10px 0;
+    vertical-align: top;
+}
+
+.art-info td {
+    font-size: .9rem;
+    padding: 10px 0;
+    vertical-align: top;
+}
+
+.art-info p {
+    line-height: 1.8;
+    color: #555;
+}
+
+
+/* =================================
+   EXHIBITIONS
+================================= */
+
+.exhibitions {
+    max-width: 900px;
+    margin: auto;
+}
+
+.exhibition {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 40px;
+    padding: 50px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.year h3 {
+    font-size: .9rem;
+    font-weight: 400;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.details h2 {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.type {
+    margin-bottom: 18px;
+    font-style: italic;
+    color: #666;
+}
+
+.details p {
+    color: #555;
+    line-height: 1.6;
+}
+
+
+/* =================================
+   CONTACT
+================================= */
+
+.contact {
+    max-width: 700px;
+}
+
+.contact h2 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.contact > p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+form {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: .9rem;
+    color: #555;
+}
+
+input,
+textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    margin-top: 20px;
+    width: 150px;
+    padding: 14px;
+    background: #111;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button:hover {
+    opacity: .8;
+}
+
+.links {
+    margin-top: 80px;
+    border-top: 1px solid #ddd;
+    padding-top: 40px;
+}
+
+
+/* =================================
+   OPEN SEADRAGON VIEWER
+================================= */
+
+#zoom-viewer {
+    width: 100%;
+    height: 500px;
+    /*background: #fafafa;
+    border: 1px solid #ddd;*/
+}
+
+
+/* =================================
+   MUSEUM VIEWER CONTROLS
+================================= */
+
+.archive-controls {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.archive-controls button {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: .08em;
+    color: #222;
+    cursor: pointer;
+}
+
+.archive-controls button + button {
+    margin-left: 40px;
+}
+
+.archive-controls button:hover {
+    background: none;
+    color: #888;
+    opacity: 1;
+}
+
+
+/* =================================
+   VIEWER INSTRUCTION
+================================= */
+
+.zoom-note {
+    margin-top: 15px;
+    font-size: .8rem;
+    letter-spacing: .5px;
+    color: #777;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 700px) {
+
+    /* HEADER */
+
+    header {
+        display: block;
+        padding: 25px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+
+    /* MAIN */
+
+    main {
+        padding: 40px 25px;
+    }
+
+
+    /* INTRO */
+
+    .intro {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin: 40px auto;
+    }
+
+    .intro-image {
+        justify-content: center;
+    }
+
+    .intro-image img {
+        max-width: 100%;
+    }
+
+
+    /* PAGE TITLE */
+
+    .page-title {
+        margin-bottom: 50px;
+    }
+
+    .page-title h2 {
+        font-size: 2rem;
+    }
+
+
+    /* ARCHIVE */
+
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+
+    /* ARTWORK PAGE */
+
+    .artwork-page {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .art-info {
+        position: static;
+    }
+
+    .art-info h2 {
+        font-size: 1.7rem;
+    }
+
+
+    /* VIEWER */
+
+    #zoom-viewer {
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    .archive-controls {
+        padding: 10px 12px;
+    }
+
+    .archive-controls button {
+        font-size: 9px;
+    }
+
+    .archive-controls button + button {
+        margin-left: 20px;
+    }
+
+
+    /* EXHIBITIONS */
+
+    .exhibition {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 35px 0;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+        width: 100%;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+    }
+
+}
