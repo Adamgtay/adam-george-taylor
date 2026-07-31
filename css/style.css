@@ -548,24 +548,35 @@ button:hover {
 
     /* VIEWER */
 
-    #zoom-viewer {
-        height: 60vh;
-        min-height: 400px;
-        border: none;
-    }
+/* VIEWER */
 
-    .archive-controls {
-        padding: 10px 12px;
-    }
+#zoom-viewer {
+    height: 60vh;
+    min-height: 400px;
+    border: none;
+}
 
-    .archive-controls button {
-        font-size: 9px;
-    }
+#zoom-viewer .openseadragon-container {
+    border: none !important;
+    outline: none !important;
+}
 
-    .archive-controls button + button {
-        margin-left: 20px;
-    }
+#zoom-viewer canvas {
+    border: none !important;
+    outline: none !important;
+}
 
+.archive-controls {
+    padding: 10px 12px;
+}
+
+.archive-controls button {
+    font-size: 9px;
+}
+
+.archive-controls button + button {
+    margin-left: 20px;
+}
 
     /* EXHIBITIONS */
 
