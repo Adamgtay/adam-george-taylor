@@ -243,12 +243,38 @@ const fullscreen = document.createElement("button");
 
 fullscreen.textContent = "FULL SCREEN";
 
-fullscreen.onclick = function() {
+fullscreen.onclick = async function() {
 
     viewer.setFullPage(true);
 
+    // Mobile devices only
+    if (window.innerWidth <= 700) {
+
+        if (screen.orientation && screen.orientation.lock) {
+
+            try {
+                await screen.orientation.lock("landscape");
+            } catch (error) {
+                console.log("Orientation lock not supported");
+            }
+
+        }
+
+    }
+
 };
 
+viewer.addHandler("full-screen", function(event) {
+
+    if (!event.fullScreen) {
+
+        if (screen.orientation && screen.orientation.unlock) {
+            screen.orientation.unlock();
+        }
+
+    }
+
+});
 
 // Add buttons to control group
 
