@@ -437,8 +437,8 @@ button:hover {
 ================================= */
 
 .zoom-note {
-    margin-top: 15px;
-    font-size: .8rem;
+    margin-top: 8px;
+    font-size: .75rem;
     letter-spacing: .5px;
     color: #777;
 }
@@ -534,11 +534,10 @@ button:hover {
 
     /* ARTWORK PAGE */
 
-    .artwork-page {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
+.artwork-page {
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
     .art-info {
         position: static;
         order: 2;
@@ -555,16 +554,15 @@ button:hover {
 
     /* MOBILE OPEN SEADRAGON VIEWER */
 
-    #zoom-viewer {
-        height: 45vh;
-        min-height: 250px;
-        max-height: 350px;
-        touch-action: pan-y;
-        border: none !important;
-        outline: none !important;
-        box-shadow: none !important;
-    }
-
+#zoom-viewer {
+    height: 260px;
+    min-height: 0;
+    max-height: none;
+    touch-action: pan-y;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
 
     #zoom-viewer .openseadragon-container,
     #zoom-viewer .openseadragon-canvas {
