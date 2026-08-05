@@ -450,28 +450,30 @@ button:hover {
 
 @media (max-width: 700px) {
 
+
     /* MOBILE HERO CROP */
 
-.hero {
-    height: 40vh;
-    min-height: 180px;
-    max-height: 300px;
-    overflow: hidden;
-    margin-bottom: 50px;
-}
+    .hero {
+        height: 40vh;
+        min-height: 180px;
+        max-height: 300px;
+        overflow: hidden;
+        margin-bottom: 50px;
+    }
 
-.hero picture {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
+    .hero picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
 
-.hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
+    .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
 
     /* HEADER */
 
@@ -534,11 +536,16 @@ button:hover {
 
     .artwork-page {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
     }
 
     .art-info {
         position: static;
+        order: 2;
+    }
+
+    .art-image {
+        order: 1;
     }
 
     .art-info h2 {
@@ -546,11 +553,19 @@ button:hover {
     }
 
 
-    /* VIEWER */
+    /* MOBILE OPEN SEADRAGON VIEWER */
 
-@media (max-width: 700px) {
+    #zoom-viewer {
+        height: 45vh;
+        min-height: 250px;
+        max-height: 350px;
+        touch-action: pan-y;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
 
-    #zoom-viewer,
+
     #zoom-viewer .openseadragon-container,
     #zoom-viewer .openseadragon-canvas {
         border: none !important;
@@ -558,22 +573,26 @@ button:hover {
         box-shadow: none !important;
     }
 
+
     #zoom-viewer .openseadragon-canvas:focus {
         outline: none !important;
     }
 
-}
-.archive-controls {
-    padding: 10px 12px;
-}
 
-.archive-controls button {
-    font-size: 9px;
-}
+    /* VIEWER CONTROLS */
 
-.archive-controls button + button {
-    margin-left: 20px;
-}
+    .archive-controls {
+        padding: 10px 12px;
+    }
+
+    .archive-controls button {
+        font-size: 9px;
+    }
+
+    .archive-controls button + button {
+        margin-left: 20px;
+    }
+
 
     /* EXHIBITIONS */
 
