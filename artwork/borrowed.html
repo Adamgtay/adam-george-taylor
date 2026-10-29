@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Adam George Taylor is the contemporary drawing practice of Adam Taylor, exploring places, objects and behaviours through observational drawing, field sketches and studio work.">
+
+<title>Factory</title>
+
+
+<link rel="stylesheet" href="../css/style.css">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>
+    <a href="../index.html">Adam George Taylor</a>
+</h1>
+
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About</a>
+    <a href="../archive.html">Archive</a>
+    <a href="../exhibitions.html">Exhibitions & Awards</a>
+    <a href="../contact.html">Contact</a>
+</nav>
+
+</header>
+
+
+<main>
+
+<section class="artwork-page">
+
+
+<div class="art-image">
+
+
+<div class="viewer-wrapper">
+
+
+    <div id="zoom-viewer"></div>
+
+
+
+
+</div>
+
+
+<p class="zoom-note">
+Click and drag to explore details
+</p>
+
+
+</div>
+
+
+
+
+<div class="art-info">
+
+
+<h2>Borrowed</h2>
+
+
+<table>
+
+<tr>
+
+<th>Date</th>
+
+<td>2026</td>
+
+</tr>
+
+
+<tr>
+
+<th>Medium</th>
+
+<td>Ink </td>
+
+</tr>
+
+
+<tr>
+
+<th>Dimensions</th>
+
+<td>1350mm x 600mm</td>
+
+</tr>
+
+
+<tr>
+
+<th>Series</th>
+
+<td>What Remains</td>
+
+</tr>
+
+
+</table>
+
+
+
+<p>
+A pen and ink illustration exploring the traces of use, ownership and human connection carried by everyday tools. Passed on by friends and family, each tool bears the marks of previous hands, recording a history of use that extends beyond its practical purpose.
+
+By observing and drawing these objects, I add my own layer of use to their histories. The act of recording becomes another way of handling them, selecting and preserving the scratches, worn surfaces and small details that distinguish each tool. What interests me is how ordinary objects carry traces of the people who have used them, and how the simple act of passing something on can embody a lasting connection between people.
+</p>
+
+
+</div>
+
+
+</section>
+
+</main>
+
+
+<footer>
+
+© 2026 Adam George Taylor
+
+</footer>
+
+<script>
+
+let viewer = OpenSeadragon({
+
+    id: "zoom-viewer",
+
+    prefixUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/images/",
+
+    tileSources: {
+        type: "image",
+        url: "../images/borrowed_final_lo_res.jpg"
+    },
+
+    // Remove the standard sprite controls
+    showNavigator: false,
+    showZoomControl: false,
+    showHomeControl: false,
+    showFullPageControl: false,
+
+    // Smooth movement
+    animationTime: 1.2,
+    blendTime: 0.2,
+
+    gestureSettingsMouse: {
+        scrollToZoom: true,
+        clickToZoom: false,
+        dblClickToZoom: true
+    },
+
+    zoomPerScroll: 1.2
+
+});
+
+
+// ----------------------------------
+// CUSTOM MUSEUM-STYLE CONTROLS
+// ----------------------------------
+
+const controls = document.createElement("div");
+
+controls.className = "archive-controls";
+
+
+// Zoom in
+
+const zoomIn = document.createElement("button");
+
+zoomIn.textContent = "+";
+
+zoomIn.setAttribute("aria-label", "Zoom in");
+
+zoomIn.onclick = function() {
+
+    viewer.viewport.zoomBy(1.2);
+
+};
+
+
+// Zoom out
+
+const zoomOut = document.createElement("button");
+
+zoomOut.textContent = "−";
+
+zoomOut.setAttribute("aria-label", "Zoom out");
+
+zoomOut.onclick = function() {
+
+    viewer.viewport.zoomBy(0.8);
+
+};
+
+
+// Reset view
+
+const reset = document.createElement("button");
+
+reset.textContent = "RESET";
+
+reset.onclick = function() {
+
+    viewer.viewport.goHome();
+
+};
+
+
+// Full screen
+
+const fullscreen = document.createElement("button");
+
+fullscreen.textContent = "FULL SCREEN";
+
+fullscreen.onclick = async function() {
+
+    viewer.setFullPage(true);
+
+    // Mobile devices only
+    if (window.innerWidth <= 700) {
+
+        if (screen.orientation && screen.orientation.lock) {
+
+            try {
+                await screen.orientation.lock("landscape");
+            } catch (error) {
+                console.log("Orientation lock not supported");
+            }
+
+        }
+
+    }
+
+};
+
+viewer.addHandler("full-screen", function(event) {
+
+    if (!event.fullScreen) {
+
+        if (screen.orientation && screen.orientation.unlock) {
+            screen.orientation.unlock();
+        }
+
+    }
+
+});
+
+// Add buttons to control group
+
+controls.appendChild(zoomIn);
+controls.appendChild(zoomOut);
+controls.appendChild(reset);
+controls.appendChild(fullscreen);
+
+
+// Anchor the controls inside the OpenSeadragon viewer
+
+viewer.addControl(
+
+    controls,
+
+    {
+        anchor: OpenSeadragon.ControlAnchor.TOP_LEFT
+    }
+
+);
+
+</script>
+
+
+</body>
+
+</html>
