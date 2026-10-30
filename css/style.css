@@ -105,6 +105,49 @@ main {
 
 
 /* =================================
+   ARCHIVE DROPDOWN
+================================= */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -12px;
+    min-width: 230px;
+    padding: 15px 12px;
+    background: #fff;
+    z-index: 1000;
+}
+
+/* Dropdown links */
+
+.dropdown-menu a {
+    display: block;
+    padding: 7px 0;
+    white-space: nowrap;
+    font-size: .85rem;
+}
+
+/* Remove underline animation from submenu links */
+
+.dropdown-menu a::after {
+    display: none;
+}
+
+/* Show submenu */
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+
+/* =================================
    INTRO
 ================================= */
 
@@ -488,6 +531,11 @@ button:hover {
         margin-top: 20px;
     }
 
+    .dropdown-menu {
+    left: 0;
+    min-width: 220px;
+}
+
 
     /* MAIN */
 
@@ -611,6 +659,8 @@ button:hover {
     textarea {
         width: 100%;
     }
+
+    
 
 }
 
