@@ -228,20 +228,31 @@ footer {
    GALLERY
 ================================= */
 
+
+/* =================================
+   GALLERY - FULL WIDTH LIST VIEW
+================================= */
+
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 70px 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    width: 100%;
+}
+
+.artwork {
+    width: 100%;
 }
 
 .artwork img {
     width: 100%;
+    height: auto;
     display: block;
     transition: opacity .25s ease;
 }
 
 .artwork img:hover {
-    opacity: .88;
+    opacity: .92;
 }
 
 
@@ -572,13 +583,15 @@ button:hover {
     }
 
 
-    /* ARCHIVE */
+/* ARCHIVE */
 
-    .gallery {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
+.gallery {
+    gap: 60px;
+}
 
+.artwork {
+    width: 100%;
+}
 
     /* ARTWORK PAGE */
 
