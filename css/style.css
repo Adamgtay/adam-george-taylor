@@ -229,34 +229,28 @@ footer {
 ================================= */
 
 .about-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 80px;
-    align-items: start;
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  width: 100%;
+}
+
+.about-image {
+  flex: 0 0 250px;
+  width: 250px;
 }
 
 .about-image img {
-    width: 100%;
-    height: auto;
-    display: block;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .about-text {
-    max-width: 700px;
+  flex: 1;
+  min-width: 0;
+  max-width: 650px;
 }
-
-.about-text h2 {
-    font-size: 2.4rem;
-    font-weight: 300;
-    margin-bottom: 35px;
-}
-
-.about-text p {
-    margin-bottom: 20px;
-    line-height: 1.8;
-    color: #555;
-}
-
 /* =================================
    GALLERY
 ================================= */
@@ -537,6 +531,18 @@ button:hover {
 
 @media (max-width: 700px) {
 
+    @media (max-width: 700px) {
+  .about-layout {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .about-image {
+    flex: none;
+    width: 100%;
+    max-width: 250px;
+  }
+}
 
     /* MOBILE HERO CROP */
 
@@ -614,22 +620,7 @@ button:hover {
     .page-title h2 {
         font-size: 2rem;
     }
-/* ABOUT PAGE */
 
-.about-layout {
-  display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.about-image {
-    max-width: 100%;
-}
-
-.about-text h2 {
-    font-size: 2rem;
-}
 
 /* ARCHIVE */
 
