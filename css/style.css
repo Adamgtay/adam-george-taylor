@@ -617,8 +617,10 @@ button:hover {
 /* ABOUT PAGE */
 
 .about-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 80px;
+  align-items: start;
 }
 
 .about-image {
