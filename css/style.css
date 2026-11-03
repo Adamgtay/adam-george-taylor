@@ -13,26 +13,24 @@ html {
 }
 
 body {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 18px;
-    line-height: 1.65;
+    font-family: "adobe-caslon-pro", Georgia, serif;
+    font-size: 16px;
+    line-height: 1.7;
     font-weight: 400;
     color: #222;
     background: #fff;
 }
 
 h1, h2, h3 {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", Arial, sans-serif;
     font-weight: 400;
-    letter-spacing: .025em;
 }
 
 nav,
 nav a {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    letter-spacing: .06em;
+    font-family: "Franklin Gothic", "Franklin Gothic Medium", Arial, sans-serif;
 }
+
 
 /* =================================
    TYPOGRAPHY
