@@ -194,8 +194,8 @@ main {
 }
 
 .intro-text h2 {
-    font-size: 1.5rem;
-    font-weight: 300;
+    font-size: 2.4rem;
+    font-weight: 400;
     margin-bottom: 25px;
     line-height: 1.4;
 }
@@ -231,7 +231,7 @@ footer {
 
 .page-title h2 {
     font-size: 2.4rem;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 20px;
 }
 
@@ -271,7 +271,7 @@ footer {
 
 .about-text h2 {
     font-size: 2.4rem;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 20px;
 }
 /* =================================
@@ -346,7 +346,7 @@ footer {
 
 .art-info h2 {
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 35px;
 }
 
@@ -406,7 +406,7 @@ footer {
 
 .details h2 {
     font-size: 1.6rem;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 10px;
 }
 
@@ -432,7 +432,7 @@ footer {
 
 .contact h2 {
     font-size: 2.4rem;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 40px;
 }
 
