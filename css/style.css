@@ -21,9 +21,14 @@ body {
     background: #fff;
 }
 
-h1, h2, h3, nav {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+h1, h2, h3 {
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", Arial, sans-serif;
     font-weight: 400;
+}
+
+nav,
+nav a {
+    font-family: "Franklin Gothic", "Franklin Gothic Medium", Arial, sans-serif;
 }
 
 
