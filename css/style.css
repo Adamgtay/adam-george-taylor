@@ -500,7 +500,7 @@ button:hover {
     padding: 0;
     background: none;
     border: none;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     font-size: 10px;
     letter-spacing: .08em;
     color: #222;
