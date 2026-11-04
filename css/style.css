@@ -14,21 +14,15 @@ html {
 
 body {
     font-family: "adobe-caslon-pro", Georgia, serif;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.7;
     font-weight: 400;
     color: #222;
     background: #fff;
 }
 
-h1, h2, h3 {
-    font-family: "Franklin Gothic Medium", "Franklin Gothic", Arial, sans-serif;
-    font-weight: 400;
-}
-
-nav,
-nav a {
-    font-family: "Franklin Gothic", "Franklin Gothic Medium", Arial, sans-serif;
+p {
+    margin-bottom: 30px;
 }
 
 
@@ -36,30 +30,73 @@ nav a {
    TYPOGRAPHY
 ================================= */
 
-h1 {
-    font-size: 1.4rem;
+
+h1,
+h2,
+h3,
+nav,
+nav a {
+    font-family: "Inter", Helvetica, sans-serif;
     font-weight: 400;
-    letter-spacing: .02em;
+}
+
+h1 {
+    font-size: 1.8rem;
+    letter-spacing: -.02em;
 }
 
 h2 {
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: -.02em;
 }
 
 h3 {
-    font-size: .9rem;
-    font-weight: 400;
+    font-size: 1rem;
     color: #777;
+    letter-spacing: -.02em;
 }
 
-p {
+/* Page titles */
+
+.page-title {
+    margin-bottom: 80px;
+}
+
+.page-title h2 {
+    font-size: 2rem;
     font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.page-title p {
+    max-width: 650px;
+    color: #666;
+}
+
+/* Artwork captions: Caslon */
+
+.caption {
+    margin-top: 18px;
+}
+
+.caption h3 {
+    font-family: "adobe-caslon-pro", Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.caption p {
+    font-family: "adobe-caslon-pro", Georgia, serif;
+    font-size: .9rem;
+    color: #666;
+    line-height: 1.5;
 }
 
 
 /* =================================
-   HEADER
+   HEADER & NAVIGATION
 ================================= */
 
 header {
@@ -77,12 +114,16 @@ header h1 a {
 
 nav {
     display: flex;
+    align-items: center;
     gap: 35px;
 }
 
 nav a {
     position: relative;
+    display: inline-block;
     font-size: .9rem;
+    line-height: 1.4;
+    letter-spacing: .04em;
     color: #222;
     text-decoration: none;
 }
@@ -100,17 +141,6 @@ nav a::after {
 
 nav a:hover::after {
     width: 100%;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-}
-
-nav a {
-    display: inline-block;
-    line-height: 1.4;
 }
 
 
@@ -146,8 +176,6 @@ main {
     z-index: 1000;
 }
 
-/* Dropdown links */
-
 .dropdown-menu a {
     display: block;
     padding: 7px 0;
@@ -155,23 +183,15 @@ main {
     font-size: .85rem;
 }
 
-/* Remove underline animation from submenu links */
-
 .dropdown-menu a::after {
     display: none;
 }
-
-/* Show submenu */
 
 .dropdown:hover .dropdown-menu,
 .dropdown:focus-within .dropdown-menu {
     display: block;
 }
 
-
-/* =================================
-   INTRO
-================================= */
 
 /* =================================
    HOMEPAGE HERO
@@ -183,9 +203,9 @@ main {
 }
 
 .hero img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
 }
 
 
@@ -212,66 +232,33 @@ main {
     color: #555;
 }
 
-/* =================================
-   FOOTER
-================================= */
-
-footer {
-    padding: 60px;
-    text-align: center;
-    color: #777;
-    font-size: .85rem;
-    border-top: 1px solid #ddd;
-    margin-top: 120px;
-}
-
 
 /* =================================
-   PAGE TITLE
-================================= */
-
-.page-title {
-    margin-bottom: 80px;
-}
-
-.page-title h2 {
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 20px;
-}
-
-.page-title p {
-    max-width: 650px;
-    color: #666;
-}
-
-
-/* =================================
-   ABOUT PAGE LAYOUT
+   ABOUT PAGE
 ================================= */
 
 .about-layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 60px;
-  width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    width: 100%;
 }
 
 .about-image {
-  flex: 0 0 250px;
-  width: 250px;
+    flex: 0 0 250px;
+    width: 250px;
 }
 
 .about-image img {
-  display: block;
-  width: 100%;
-  height: auto;
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .about-text {
-  flex: 1;
-  min-width: 0;
-  max-width: 650px;
+    flex: 1;
+    min-width: 0;
+    max-width: 650px;
 }
 
 .about-text h2 {
@@ -279,13 +266,10 @@ footer {
     font-weight: 400;
     margin-bottom: 20px;
 }
+
+
 /* =================================
    GALLERY
-================================= */
-
-
-/* =================================
-   GALLERY - FULL WIDTH LIST VIEW
 ================================= */
 
 .gallery {
@@ -300,36 +284,14 @@ footer {
 }
 
 .artwork img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
     transition: opacity .25s ease;
 }
 
 .artwork img:hover {
     opacity: .92;
-}
-
-
-/* =================================
-   ARTWORK CAPTION
-================================= */
-
-.caption {
-    margin-top: 18px;
-}
-
-.caption h3 {
-    font-weight: 500;
-    font-size: 1rem;
-    margin-bottom: 8px;
-    color: #222;
-}
-
-.caption p {
-    font-size: .9rem;
-    color: #666;
-    line-height: 1.5;
 }
 
 
@@ -447,10 +409,10 @@ footer {
 }
 
 form {
-    margin-top: 60px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin-top: 60px;
 }
 
 label {
@@ -473,8 +435,8 @@ textarea {
 }
 
 button {
-    margin-top: 20px;
     width: 150px;
+    margin-top: 20px;
     padding: 14px;
     background: #111;
     color: #fff;
@@ -495,14 +457,26 @@ button:hover {
 
 
 /* =================================
+   FOOTER
+================================= */
+
+footer {
+    padding: 60px;
+    margin-top: 120px;
+    text-align: center;
+    color: #777;
+    font-size: .85rem;
+    border-top: 1px solid #ddd;
+}
+
+
+/* =================================
    OPEN SEADRAGON VIEWER
 ================================= */
 
 #zoom-viewer {
     width: 100%;
     height: 500px;
-    /*background: #fafafa;
-    border: 1px solid #ddd;*/
 }
 
 
@@ -523,7 +497,7 @@ button:hover {
     padding: 0;
     background: none;
     border: none;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-family: "neue-haas-grotesk-display", Helvetica, sans-serif;
     font-size: 10px;
     letter-spacing: .08em;
     color: #222;
@@ -559,21 +533,33 @@ button:hover {
 
 @media (max-width: 700px) {
 
-    @media (max-width: 700px) {
-  .about-layout {
-    flex-direction: column;
-    gap: 35px;
-  }
+    /* HEADER */
 
-  .about-image {
-    flex: none;
-    width: 100%;
-    max-width: 250px;
-  }
-}
+    header {
+        display: block;
+        padding: 25px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .dropdown-menu {
+        left: 0;
+        min-width: 220px;
+    }
 
 
-    /* MOBILE HERO CROP */
+    /* MAIN */
+
+    main {
+        padding: 40px 25px;
+    }
+
+
+    /* HERO */
 
     .hero {
         height: 40vh;
@@ -597,32 +583,6 @@ button:hover {
     }
 
 
-    /* HEADER */
-
-    header {
-        display: block;
-        padding: 25px;
-    }
-
-    nav {
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-top: 20px;
-    }
-
-    .dropdown-menu {
-    left: 0;
-    min-width: 220px;
-}
-
-
-    /* MAIN */
-
-    main {
-        padding: 40px 25px;
-    }
-
-
     /* INTRO */
 
     .intro {
@@ -640,7 +600,7 @@ button:hover {
     }
 
 
-    /* PAGE TITLE */
+    /* PAGE TITLES */
 
     .page-title {
         margin-bottom: 50px;
@@ -651,22 +611,38 @@ button:hover {
     }
 
 
-/* ARCHIVE */
+    /* ABOUT */
 
-.gallery {
-    gap: 60px;
-}
+    .about-layout {
+        flex-direction: column;
+        gap: 35px;
+    }
 
-.artwork {
-    width: 100%;
-}
+    .about-image {
+        flex: none;
+        width: 100%;
+        max-width: 250px;
+    }
+
+
+    /* GALLERY */
+
+    .gallery {
+        gap: 60px;
+    }
+
+    .artwork {
+        width: 100%;
+    }
+
 
     /* ARTWORK PAGE */
 
-.artwork-page {
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
+    .artwork-page {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
     .art-info {
         position: static;
         order: 2;
@@ -681,17 +657,17 @@ button:hover {
     }
 
 
-    /* MOBILE OPEN SEADRAGON VIEWER */
+    /* OPEN SEADRAGON VIEWER */
 
-#zoom-viewer {
-    height: 260px;
-    min-height: 0;
-    max-height: none;
-    touch-action: pan-y;
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-}
+    #zoom-viewer {
+        height: 260px;
+        min-height: 0;
+        max-height: none;
+        touch-action: pan-y;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
 
     #zoom-viewer .openseadragon-container,
     #zoom-viewer .openseadragon-canvas {
@@ -699,7 +675,6 @@ button:hover {
         outline: none !important;
         box-shadow: none !important;
     }
-
 
     #zoom-viewer .openseadragon-canvas:focus {
         outline: none !important;
@@ -741,10 +716,4 @@ button:hover {
         width: 100%;
     }
 
-    
-
-}
-
-p {
-  margin-bottom: 30px;
 }
